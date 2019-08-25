@@ -1,5 +1,8 @@
 # gsbx
 
+home: https://guowenzhuang.github.io/gsbx
+admin: https://guowenzhuang.github.io/gsbx/#/admin
+
 ## Project setup
 ```
 yarn install

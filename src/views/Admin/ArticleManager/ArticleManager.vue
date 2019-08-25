@@ -5,8 +5,8 @@
             <a-list-item slot="renderItem" slot-scope="item, index" style="border: 1px solid cornflowerblue">
                 <a-list-item-meta :description="item.body">
                     <a slot="title" href="javascript:void(0)">
-                        <span>{{item.title}}</span>
-                        <span style="float: right">{{index}}-{{item.created_at}}</span>
+                        <span>{{index+1}}-{{item.title}}</span>
+                        <span style="float: right">{{item.created_at}}</span>
                     </a>
                 </a-list-item-meta>
             </a-list-item>
