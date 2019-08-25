@@ -35,7 +35,7 @@ export default {
   created () {
     // 查询是否有token
     if (Cookie.get('token') == null || Cookie.get('token') === '') {
-      const code = this.$route.query.code
+      const code = window.location.href.match(/code=(\S*)#/)[1]
       if (code == null || code === '') {
         return
       }
@@ -44,8 +44,17 @@ export default {
         client_secret: config.clientSecret,
         code: code
       }).then(res => {
-        console.log(res)
-        let token = res.access_token
+        let token = null
+        if (api.getToken === 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token') {
+          token = res.split('=')[1].split('&')[0]
+          if (token === 'bad_verification_code') {
+            alert('登录失败')
+            return
+          }
+        } else {
+          token = res.access_token
+        }
+        console.log(token, res)
         getActiceUser({
           access_token: token
         }).then(userRes => {
