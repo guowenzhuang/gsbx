@@ -35,10 +35,12 @@ export default {
   created () {
     // 查询是否有token
     if (Cookie.get('token') == null || Cookie.get('token') === '') {
-      const code = window.location.href.match(/code=(\S*)#/)[1]
-      if (code == null || code === '') {
+      const codes = window.location.href.match(/code=(\S*)#/)
+
+      if (codes == null || codes === '') {
         return
       }
+      const code = codes[1]
       getToken({
         client_id: config.clientId,
         client_secret: config.clientSecret,
