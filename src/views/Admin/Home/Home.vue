@@ -53,7 +53,7 @@
                             </a-badge>
                         </span>
                         <span>
-                            <a-avatar src="/img/user-head.jpg"/>
+                            <a-avatar src="/gsbx/img/user-head.jpg"/>
                         </span>
                         <span class="username">国宝</span>
                     </div>

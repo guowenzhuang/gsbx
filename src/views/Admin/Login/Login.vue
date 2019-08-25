@@ -78,7 +78,7 @@ export default {
         background-size: cover;
         width: 100vw;
         padding-top: 15vh;
-        background: url("/img/logobg.svg") no-repeat;
+        background: url("/gsbx/img/logobg.svg") no-repeat;
         display: flex;
         flex-direction: column;
         align-items: center;
