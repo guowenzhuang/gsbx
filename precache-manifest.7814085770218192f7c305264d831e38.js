@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "9c658eb24305d3c76531",
-    "url": "/gsbx/css/chunk-7f7d6668.54a50ede.css"
+    "revision": "8e92609a5e4570852076",
+    "url": "/gsbx/css/chunk-7f7d6668.7214550e.css"
   },
   {
     "revision": "5db7d14d6c8f3b8a5d81eca40f15df58",
@@ -36,15 +36,15 @@ self.__precacheManifest = [
     "url": "/gsbx/js/chunk-56cfbf44.dd3bd2b6.js"
   },
   {
-    "revision": "2c3d4de135a266f1a3ca",
-    "url": "/gsbx/js/app.696a0150.js"
+    "revision": "f9cd798ad12af2cc26bb",
+    "url": "/gsbx/js/app.a19ad62a.js"
   },
   {
-    "revision": "9c658eb24305d3c76531",
-    "url": "/gsbx/js/chunk-7f7d6668.4be4abf7.js"
+    "revision": "8e92609a5e4570852076",
+    "url": "/gsbx/js/chunk-7f7d6668.19cee383.js"
   },
   {
-    "revision": "aa841c67d29d035475f4816eee84e1a8",
+    "revision": "bda09ce344aa27b999d4609f2406809d",
     "url": "/gsbx/index.html"
   },
   {
@@ -72,7 +72,7 @@ self.__precacheManifest = [
     "url": "/gsbx/css/chunk-56cfbf44.e648aca9.css"
   },
   {
-    "revision": "2c3d4de135a266f1a3ca",
+    "revision": "f9cd798ad12af2cc26bb",
     "url": "/gsbx/css/app.347d2e32.css"
   }
 ];
