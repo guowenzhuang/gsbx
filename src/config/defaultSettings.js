@@ -3,8 +3,8 @@
  *
  */
 export default {
-  clientId: 'd318e11d5b12bf0417b6',
-  clientSecret: '35d61b835b940179de4d8dc1d3b9541ed4cd55f9',
+  clientId: 'd7b3acf20efed15aaf3e',
+  clientSecret: '3218bbf0edd44432d0b9605237c694d1662a74f0',
   // 仓库所属用户名
   username: 'guowenzhuang',
   // 文章仓库地址
