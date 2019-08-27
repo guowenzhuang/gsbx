@@ -10,12 +10,13 @@
                 theme="dark"
                 :inlineCollapsed="collapsed"
         >
-            <a-sub-menu key="nav-title" class="nav-header">
-                <div slot="title" style="display: flex;justify-content: center;align-items: center;">
+            <a-sub-menu key="nav-title" class="nav-header" id="nav-header">
+                <div slot="title"
+                     style="display: flex;justify-content: center;align-items: center;">
                     <icon name="gsbx-Artboard" style="font-size: 50px;"/>
                     <span v-show="!collapsed" style="margin-left: 8px;">
                             GSBX博客
-                        </span>
+                    </span>
                 </div>
             </a-sub-menu>
             <!--eslint-disable-next-line-->
@@ -87,7 +88,6 @@ export default {
       this.$router.push({
         name: item.key
       })
-      console.log(item)
     }
   },
   created () {
@@ -112,6 +112,10 @@ export default {
 
         & > div > .ant-menu-dark {
             height: 100%;
+        }
+
+        #nav-header .ant-menu-submenu-title{
+            padding: 0 !important;
         }
 
         .nav-header {

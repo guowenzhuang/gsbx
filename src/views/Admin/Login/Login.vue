@@ -35,17 +35,17 @@ export default {
   created () {
     // 查询是否有token
     if (Cookie.get('token') == null || Cookie.get('token') === '') {
-      const codes = window.location.href.match(/code=(\S*)#/)
+      const code = this.$route.query.code
 
-      if (codes == null || codes === '') {
+      if (code == null || code === '') {
         return
       }
-      const code = codes[1]
       getToken({
         client_id: config.clientId,
         client_secret: config.clientSecret,
         code: code
       }).then(res => {
+        console.log('登录返回', res)
         let token = null
         if (api.getToken === 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token') {
           token = res.split('=')[1].split('&')[0]
