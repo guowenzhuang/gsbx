@@ -1,7 +1,7 @@
 # gsbx
 
 home: https://guowenzhuang.github.io/gsbx
-admin: https://guowenzhuang.github.io/gsbx/#/admin
+admin: https://guowenzhuang.github.io/gsbx/admin
 
 ## Project setup
 ```
