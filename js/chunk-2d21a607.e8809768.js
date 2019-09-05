@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21a607"],{baf8:function(n,e,a){"use strict";a.r(e);var t=function(){var n=this,e=n.$createElement,a=n._self._c||e;return a("div",[n._v("\n    工作台\n")])},c=[],r={name:"Workbench"},u=r,o=a("2877"),s=Object(o["a"])(u,t,c,!1,null,"f8b883fa",null),f=s.exports;e["default"]=f}}]);
