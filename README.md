@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="./public/img/logo.jpg" alt="Project logo"></a>
+ <img width=200px height=200px src="public/img/logo.png" alt="Project logo"></a>
 </p>
 
 <h3 align="center">GSBX个人博客</h3>
@@ -130,19 +130,11 @@ GSBX:前端采用vue+antd开发,无须服务器,部署到github pages 只要简�
 
 ![6TpwHYKfoRPUd71](https://i.loli.net/2019/09/06/6TpwHYKfoRPUd71.png)
 
-
-
 ![rbJ8oeSVw3Egnxh](https://i.loli.net/2019/09/06/rbJ8oeSVw3Egnxh.png)
-
-
 
 ![8A7dLF2OvfSpZJY](https://i.loli.net/2019/09/06/8A7dLF2OvfSpZJY.png)
 
-
-
 ![eGxI1nNCMR5KZuf](https://i.loli.net/2019/09/06/eGxI1nNCMR5KZuf.png)
-
-
 
 ## 🚀 TODO <a name = "todo"></a>
 
