@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="./logo.png" alt="Project logo"></a>
+ <img width=200px height=200px src="https://s2.ax1x.com/2019/09/06/nMd7U1.jpg" alt="Project logo"></a>
 </p>
 
 <h3 align="center">GSBX个人博客</h3>
