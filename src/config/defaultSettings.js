@@ -11,6 +11,7 @@ export default {
   // 文章仓库地址
   articleRepo: 'gsbxComment',
   articleLabel: 'article',
+  articleMarkdownLabel: 'article-md',
   adminMenu: [
     {
       title: 'dashboard',
@@ -35,8 +36,8 @@ export default {
           icon: 'plus-square'
         },
         {
-          title: '文章管理',
-          key: 'articleManager',
+          title: '修改文章',
+          key: 'articleUpdate',
           icon: 'file-text'
         }
       ]

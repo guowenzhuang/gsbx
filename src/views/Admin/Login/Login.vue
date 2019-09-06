@@ -45,12 +45,11 @@ export default {
         client_secret: config.clientSecret,
         code: code
       }).then(res => {
-        console.log('登录返回', res)
         let token = null
         if (api.getToken === 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token') {
           token = res.split('=')[1].split('&')[0]
           if (token === 'bad_verification_code') {
-            alert('登录失败')
+            this.$message.error('登录失败')
             return
           }
         } else {
@@ -60,6 +59,10 @@ export default {
         getActiceUser({
           access_token: token
         }).then(userRes => {
+          if (userRes.login !== config.username) {
+            this.$message.error('不是此用户的博客管理系统')
+            return
+          }
           sessionStorage.setItem('loginname', userRes.login)
           sessionStorage.setItem('name', userRes.name)
           // Cookie保存token

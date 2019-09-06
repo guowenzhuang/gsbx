@@ -33,7 +33,7 @@ export default {
 
         & > .ant-spin-nested-loading {
             position: static;
-            height: 100%;
+            /*height: 100%;*/
 
             & > div {
                 height: 100%;

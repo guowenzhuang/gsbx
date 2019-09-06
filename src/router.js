@@ -13,6 +13,11 @@ export default new Router({
       component: () => import('@/views/Home')
     },
     {
+      path: '/articleDetail',
+      name: 'articleDetail',
+      component: () => import('@/views/ArticleDetail')
+    },
+    {
       path: '/admin',
       name: 'admin',
       component: () => import('@/views/Admin'),
@@ -40,9 +45,9 @@ export default new Router({
               component: () => import('@/views/Admin/WriteArticle')
             },
             {
-              path: '/admin/home/articleManager',
-              name: 'articleManager',
-              component: () => import('@/views/Admin/ArticleManager')
+              path: '/admin/home/articleUpdate',
+              name: 'articleUpdate',
+              component: () => import('@/views/Admin/ArticleUpdate')
             }
           ]
         }

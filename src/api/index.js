@@ -6,6 +6,8 @@ const api = {
   // getToken: 'https://cors.wenjunjiang.win/?remoteUrl=https://github.com/login/oauth/access_token',
   getActiveUser: 'https://api.github.com/user',
   issueArticle: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues`,
-  getArticle: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues`
+  updateArticle: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues/`,
+  getArticle: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues`,
+  getArticleDetail: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues/`
 }
 export default api

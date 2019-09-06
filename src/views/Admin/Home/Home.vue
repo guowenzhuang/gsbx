@@ -56,7 +56,7 @@
                         <span>
                             <a-avatar src="/gsbx/img/user-head.jpg"/>
                         </span>
-                        <span class="username">国宝</span>
+                        <span class="username">{{name}}</span>
                     </div>
                 </div>
                 <div>
@@ -77,7 +77,8 @@ export default {
     return {
       collapsed: false,
       menus: config.adminMenu,
-      defaultSelected: ['workbench']
+      defaultSelected: ['workbench'],
+      name: sessionStorage.getItem('name')
     }
   },
   methods: {
@@ -114,7 +115,7 @@ export default {
             height: 100%;
         }
 
-        #nav-header .ant-menu-submenu-title{
+        #nav-header .ant-menu-submenu-title {
             padding: 0 !important;
         }
 

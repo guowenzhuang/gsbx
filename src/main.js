@@ -10,9 +10,13 @@ import '@/assets/css/BaseCss.css'
 import PluginAxios from '@/plugin/axios'
 import '@/plugin/antd'
 import 'ant-design-vue/dist/antd.css'
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 
 Vue.use(VueIconFont)
 Vue.use(PluginAxios)
+// 富文本
+Vue.use(mavonEditor)
 
 Vue.config.productionTip = false
 
