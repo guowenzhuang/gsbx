@@ -1,7 +1,7 @@
 <template>
     <div class="admin-home">
         <a-menu
-                :style="{width: collapsed? '5vw':'15vw'}"
+                :style="{width: collapsed? '5vw':'15vw',height:'100vh'}"
                 class="nav"
                 @select="selectMenu"
                 :defaultSelectedKeys="defaultSelected"

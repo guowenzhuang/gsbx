@@ -40,7 +40,7 @@ export default {
 
 <style scoped lang="scss">
     .article-detail {
-        padding-top: 8vh;
+        padding: 0 6vh;
         text-align: left;
 
         .title {
