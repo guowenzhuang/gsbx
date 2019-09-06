@@ -17,7 +17,7 @@
 - [介绍](#about)
 - [起步](#run)
 - [发布到github pages](#fabu)
-- [图列](#tulie)
+- [图例](#tulie)
 - [TODO](#todo)
 - [作者](#author)
 
@@ -126,7 +126,7 @@ GSBX:前端采用vue+antd开发,无须服务器,部署到github pages 只要简�
 
 ![NTuMfcojBD2XdGr](https://i.loli.net/2019/09/06/NTuMfcojBD2XdGr.png)
 
-## 🎨 TODO <a name = "tuli"></a>
+## 🎨 图例 <a name = "tuli"></a>
 
 ![6TpwHYKfoRPUd71](https://i.loli.net/2019/09/06/6TpwHYKfoRPUd71.png)
 
