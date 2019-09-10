@@ -10,6 +10,7 @@ const api = {
   getIssue: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues`,
   getIssueDetail: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues/`,
   imgUpload: 'https://sm.ms/api/v2/upload',
-  imgDelete: 'https://sm.ms/api/v2/delete/'
+  imgDelete: 'https://sm.ms/api/v2/delete/',
+  lockIssue: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues/#{number}/lock`
 }
 export default api

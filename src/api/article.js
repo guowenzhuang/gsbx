@@ -33,3 +33,12 @@ export function getIssueDetail (articleId) {
     method: 'get'
   })
 }
+
+export function lockIssue (articleId) {
+  let url = api.lockIssue
+  url = url.replace('#{number}', articleId)
+  return axios({
+    url: url,
+    method: 'PUT'
+  })
+}

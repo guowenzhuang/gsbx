@@ -18,6 +18,10 @@
             <a-button type="primary" @click="updateArticle">
                 修改文章
             </a-button>
+            &nbsp;
+            <a-button style="background: #ed4014;color: #ffffff" @click="deleteArticle">
+                删除文章
+            </a-button>
         </div>
     </div>
 </template>
@@ -59,7 +63,39 @@ export default {
     markChange (value, render) {
       this.article.body = render
     },
+    /**
+     * 删除文章
+     */
+    deleteArticle () {
+      if (this.activeKey[0] == null) {
+        this.$message.error('请选择文章')
+        return
+      }
+      // 删除文章
+      updateIssue({
+        articleId: this.activeKey[0],
+        labels: [config.deleteArticleLabel]
+      }).then(res => {
+        // 删除markdown
+        updateIssue({
+          articleId: this.activeKey[1],
+          labels: [config.deletearticleMarkdownLabel]
+        }).then(mdRes => {
+          this.activeKey = []
+          this.article.title = ''
+          this.article.markdownbody = ''
+          this.$message.success('删除成功')
+        })
+      })
+    },
+    /**
+     * 修改文章
+     */
     updateArticle () {
+      if (this.activeKey[0] == null) {
+        this.$message.error('请选择文章')
+        return
+      }
       // 修改文章
       updateIssue({
         articleId: this.activeKey[0],
@@ -76,33 +112,36 @@ export default {
           this.$message.success('修改成功')
         })
       })
+    },
+    articleInit () {
+      // 获取文章
+      getIssue({
+        state: 'open',
+        labels: config.articleLabel
+      }).then(res => {
+        res = res.map(item => {
+          // 转换时间
+          item.created_time = dayjs(item.created_at).format('YYYY-MM-DD HH:mm:ss')
+          return item
+        })
+        this.articleAll = res
+      })
+      // 获取markdown
+      getIssue({
+        state: 'open',
+        labels: config.articleMarkdownLabel
+      }).then(res => {
+        res = res.map(item => {
+          // 转换时间
+          item.created_time = dayjs(item.created_at).format('YYYY-MM-DD HH:mm:ss')
+          return item
+        })
+        this.mdAll = res
+      })
     }
   },
   created () {
-    // 获取文章
-    getIssue({
-      state: 'open',
-      labels: config.articleLabel
-    }).then(res => {
-      res = res.map(item => {
-        // 转换时间
-        item.created_time = dayjs(item.created_at).format('YYYY-MM-DD HH:mm:ss')
-        return item
-      })
-      this.articleAll = res
-    })
-    // 获取markdown
-    getIssue({
-      state: 'open',
-      labels: config.articleMarkdownLabel
-    }).then(res => {
-      res = res.map(item => {
-        // 转换时间
-        item.created_time = dayjs(item.created_at).format('YYYY-MM-DD HH:mm:ss')
-        return item
-      })
-      this.mdAll = res
-    })
+    this.articleInit()
   }
 }
 </script>
@@ -111,10 +150,15 @@ export default {
     .article-update {
         padding-top: 3vh;
         padding-left: 2vw;
+        padding-bottom: 3vh;
 
         & > .left {
             text-align: left;
 
         }
+    }
+
+    .ant-select-dropdown--single {
+        z-index: 1600;
     }
 </style>

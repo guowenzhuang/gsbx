@@ -17,6 +17,8 @@ export default {
   // 存放文章时的markdown内容标签名
   articleMarkdownLabel: 'article-md',
   userInfoLabel: 'userinfo',
+  deleteArticleLabel: 'article-delete',
+  deletearticleMarkdownLabel: 'article-md-delete',
   // 菜单导航
   adminMenu: [
     {
@@ -47,7 +49,7 @@ export default {
           icon: 'plus-square'
         },
         {
-          title: '修改文章',
+          title: '文章管理',
           key: 'articleUpdate',
           icon: 'file-text'
         }
