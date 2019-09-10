@@ -83,8 +83,8 @@ export default {
                 body: JSON.stringify(userinfo),
                 labels: [config.userInfoLabel]
               }).then(() => {
+                this.$store.commit('setName', userRes.name)
                 sessionStorage.setItem('loginname', userRes.login)
-                sessionStorage.setItem('name', userRes.name)
                 this.$router.push('/admin/home')
               })
             })
@@ -92,7 +92,8 @@ export default {
             const userBody = userRes[0].body
             let userinfo = JSON.parse(userBody)
             sessionStorage.setItem('loginname', userinfo.loginname)
-            sessionStorage.setItem('name', userinfo.name)
+            this.$store.commit('setName', userinfo.name)
+
             this.$router.push('/admin/home')
           }
         })
