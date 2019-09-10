@@ -3,7 +3,7 @@
         <div class="title">
             <h2 class="article-title">{{article.title}}</h2>
             <div>
-                <span>作者: {{userinfo.name}}</span>
+                <span>作者: {{article.user.login}}</span>
             </div>
             <div>
                 <time class="time">日期: {{article.created_time}}</time>

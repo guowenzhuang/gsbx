@@ -26,7 +26,7 @@
                         <p slot="description" v-html="item.desc"></p>
                     </a-list-item-meta>
                     <div class="footer">
-                        <span>{{userinfo.name}}</span>
+                        <span>{{item.user.login}}</span>
                         <time>{{item.created_time}}</time>
                     </div>
                 </a-list-item>

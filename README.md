@@ -17,6 +17,7 @@
 - [介绍](#about)
 - [起步](#run)
 - [发布到github pages](#fabu)
+- [案例](#anlie)
 - [图例](#tulie)
 - [TODO](#todo)
 - [作者](#author)
@@ -125,6 +126,9 @@ GSBX:前端采用vue+antd开发,无须服务器,部署到github pages 只要简�
    4. 开启github pages
 
 ![NTuMfcojBD2XdGr](https://i.loli.net/2019/09/06/NTuMfcojBD2XdGr.png)
+
+## 🎨 案例 <a name = "anlie"></a>
+https://guowenzhuang.github.io/gsbx/
 
 ## 🎨 图例 <a name = "tulie"></a>
 
