@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { issueArticle } from '@/api/article'
+import { addIssue } from '@/api/article'
 import config from '@/config/defaultSettings'
 
 export default {
@@ -39,12 +39,12 @@ export default {
         return
       }
       // 发表文章
-      issueArticle({
+      addIssue({
         ...this.article,
         labels: [config.articleLabel]
       }).then(res => {
         // 发表markdown
-        issueArticle({
+        addIssue({
           title: this.article.title,
           body: this.article.markdownbody,
           labels: [config.articleMarkdownLabel]

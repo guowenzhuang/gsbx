@@ -40,6 +40,11 @@ export default new Router({
               component: () => import('@/views/Admin/Workbench')
             },
             {
+              path: '/admin/home/personal',
+              name: 'personal',
+              component: () => import('@/views/Admin/Personal')
+            },
+            {
               path: '/admin/home/writeArticle',
               name: 'writeArticle',
               component: () => import('@/views/Admin/WriteArticle')

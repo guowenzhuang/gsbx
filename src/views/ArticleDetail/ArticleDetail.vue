@@ -3,7 +3,7 @@
         <div class="title">
             <h2 class="article-title">{{article.title}}</h2>
             <div>
-                <span>作者: {{article.user.login}}</span>
+                <span>作者: {{userinfo.name}}</span>
             </div>
             <div>
                 <time class="time">日期: {{article.created_time}}</time>
@@ -16,8 +16,9 @@
 </template>
 
 <script>
-import { getArticleDetail } from '@/api/article'
+import { getIssueDetail } from '@/api/article'
 import dayjs from 'dayjs'
+import { mapState } from 'vuex'
 
 export default {
   name: 'ArticleDetail',
@@ -28,8 +29,13 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapState({
+      userinfo: state => state.userinfo
+    })
+  },
   created () {
-    getArticleDetail(this.$route.query.articleId)
+    getIssueDetail(this.$route.query.articleId)
       .then(articleRes => {
         articleRes.created_time = dayjs(articleRes.created_at).format('YYYY-MM-DD HH:mm:ss')
         this.article = articleRes
@@ -40,7 +46,7 @@ export default {
 
 <style scoped lang="scss">
     .article-detail {
-        padding: 0 6vh;
+        padding: 3vh 6vh;
         text-align: left;
 
         .title {

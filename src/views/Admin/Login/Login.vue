@@ -19,6 +19,7 @@
 <script>
 import api from '@/api'
 import { getToken, getActiceUser } from '@/api/user'
+import { getIssue, addIssue } from '@/api/article'
 import config from '@/config/defaultSettings'
 import Cookie from 'js-cookie'
 
@@ -55,19 +56,45 @@ export default {
         } else {
           token = res.access_token
         }
-        console.log(token, res)
-        getActiceUser({
-          access_token: token
+        // Cookie保存token
+        Cookie.set('token', token)
+        // 获取用户信息
+        getIssue({
+          state: 'open',
+          labels: config.userInfoLabel
         }).then(userRes => {
-          if (userRes.login !== config.username) {
-            this.$message.error('不是此用户的博客管理系统')
-            return
+          // 没有用户信息
+          if (userRes.length === 0) {
+            getActiceUser({
+              access_token: token
+            }).then(userRes => {
+              if (userRes.login !== config.username) {
+                this.$message.error('不是此用户的博客管理系统')
+                return
+              }
+
+              // 把用户信息存到issue
+              let userinfo = {
+                loginname: userRes.login,
+                name: userRes.name
+              }
+              addIssue({
+                title: '用户个人信息',
+                body: JSON.stringify(userinfo),
+                labels: [config.userInfoLabel]
+              }).then(() => {
+                sessionStorage.setItem('loginname', userRes.login)
+                sessionStorage.setItem('name', userRes.name)
+                this.$router.push('/admin/home')
+              })
+            })
+          } else {
+            const userBody = userRes[0].body
+            let userinfo = JSON.parse(userBody)
+            sessionStorage.setItem('loginname', userinfo.loginname)
+            sessionStorage.setItem('name', userinfo.name)
+            this.$router.push('/admin/home')
           }
-          sessionStorage.setItem('loginname', userRes.login)
-          sessionStorage.setItem('name', userRes.name)
-          // Cookie保存token
-          Cookie.set('token', token)
-          this.$router.push('/admin/home')
         })
       })
     } else {

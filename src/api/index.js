@@ -5,9 +5,11 @@ const api = {
   getToken: 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token',
   // getToken: 'https://cors.wenjunjiang.win/?remoteUrl=https://github.com/login/oauth/access_token',
   getActiveUser: 'https://api.github.com/user',
-  issueArticle: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues`,
-  updateArticle: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues/`,
-  getArticle: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues`,
-  getArticleDetail: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues/`
+  addIssue: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues`,
+  updateIssue: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues/`,
+  getIssue: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues`,
+  getIssueDetail: `https://api.github.com/repos/${config.username}/${config.articleRepo}/issues/`,
+  imgUpload: 'https://sm.ms/api/v2/upload',
+  imgDelete: 'https://sm.ms/api/v2/delete/'
 }
 export default api

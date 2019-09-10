@@ -3,33 +3,33 @@ import Vue from '@/plugin/axios'
 
 const axios = Vue.axios
 
-export function issueArticle (parameter) {
+export function addIssue (parameter) {
   return axios({
-    url: api.issueArticle,
+    url: api.addIssue,
     method: 'post',
     data: parameter
   })
 }
 
-export function updateArticle (parameter) {
+export function updateIssue (parameter) {
   return axios({
-    url: api.updateArticle + parameter.articleId,
+    url: api.updateIssue + parameter.articleId,
     method: 'patch',
     data: parameter
   })
 }
 
-export function getArticle (parameter) {
+export function getIssue (parameter) {
   return axios({
-    url: api.getArticle,
+    url: api.getIssue,
     method: 'get',
     params: parameter
   })
 }
 
-export function getArticleDetail (articleId) {
+export function getIssueDetail (articleId) {
   return axios({
-    url: api.getArticleDetail + articleId,
+    url: api.getIssueDetail + articleId,
     method: 'get'
   })
 }

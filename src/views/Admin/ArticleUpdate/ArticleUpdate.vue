@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { getArticle, updateArticle } from '@/api/article'
+import { getIssue, updateIssue } from '@/api/article'
 import config from '@/config/defaultSettings'
 import dayjs from 'dayjs'
 
@@ -61,13 +61,13 @@ export default {
     },
     updateArticle () {
       // 修改文章
-      updateArticle({
+      updateIssue({
         articleId: this.activeKey[0],
         ...this.article,
         labels: [config.articleLabel]
       }).then(res => {
-        // 发表markdown
-        updateArticle({
+        // 修改markdown
+        updateIssue({
           articleId: this.activeKey[1],
           title: this.article.title,
           body: this.article.markdownbody,
@@ -80,7 +80,7 @@ export default {
   },
   created () {
     // 获取文章
-    getArticle({
+    getIssue({
       state: 'open',
       labels: config.articleLabel
     }).then(res => {
@@ -92,7 +92,7 @@ export default {
       this.articleAll = res
     })
     // 获取markdown
-    getArticle({
+    getIssue({
       state: 'open',
       labels: config.articleMarkdownLabel
     }).then(res => {

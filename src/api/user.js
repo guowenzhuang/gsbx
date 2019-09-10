@@ -18,3 +18,16 @@ export function getActiceUser (parameter) {
     params: parameter
   })
 }
+
+export function imgUpload (formData) {
+  return fetch(api.imgUpload, {
+    method: 'POST',
+    body: formData
+  })
+}
+
+export function imgDelete (hash) {
+  return fetch(api.imgDelete + hash, {
+    method: 'GET'
+  })
+}

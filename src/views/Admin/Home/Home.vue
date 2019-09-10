@@ -54,9 +54,9 @@
                             </a-badge>
                         </span>
                         <span>
-                            <a-avatar src="/gsbx/img/user-head.jpg"/>
+                            <a-avatar :src="userinfo.headUrl == null?  '/gsbx/img/user-head.jpg':userinfo.headUrl"/>
                         </span>
-                        <span class="username">{{name}}</span>
+                        <span class="username">{{userinfo.name}}</span>
                     </div>
                 </div>
                 <div>
@@ -70,6 +70,7 @@
 <script>
 import config from '@/config/defaultSettings'
 import Cookie from 'js-cookie'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -77,9 +78,13 @@ export default {
     return {
       collapsed: false,
       menus: config.adminMenu,
-      defaultSelected: ['workbench'],
-      name: sessionStorage.getItem('name')
+      defaultSelected: ['workbench']
     }
+  },
+  computed: {
+    ...mapState({
+      userinfo: state => state.userinfo
+    })
   },
   methods: {
     toggleCollapsed () {
@@ -107,8 +112,8 @@ export default {
         height: 100%;
 
         .body {
-            width: 100%;
-            transition: background 0.3s, width 8s;
+            width: 84.4%;
+            /*transition: background 0.3s, width 8s;*/
         }
 
         & > div > .ant-menu-dark {

@@ -26,8 +26,8 @@
                         <p slot="description" v-html="item.desc"></p>
                     </a-list-item-meta>
                     <div class="footer">
-                            <span>{{item.user.login}}</span>
-                            <time>{{item.created_time}}</time>
+                        <span>{{userinfo.name}}</span>
+                        <time>{{item.created_time}}</time>
                     </div>
                 </a-list-item>
             </a-list>
@@ -36,7 +36,8 @@
 </template>
 
 <script>
-import { getArticle } from '@/api/article'
+import { mapState } from 'vuex'
+import { getIssue } from '@/api/article'
 import config from '@/config/defaultSettings'
 import dayjs from 'dayjs'
 
@@ -46,6 +47,11 @@ export default {
     return {
       article: []
     }
+  },
+  computed: {
+    ...mapState({
+      userinfo: state => state.userinfo
+    })
   },
   methods: {
     /**
@@ -156,7 +162,7 @@ export default {
     }
   },
   created () {
-    getArticle({
+    getIssue({
       state: 'open',
       labels: config.articleLabel
     }).then(res => {
@@ -250,6 +256,12 @@ export default {
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 5px;
             color: #738a94;
+            @media screen and (max-width: 1000px) {
+                & {
+                    width: 100%;
+                    margin: 0 0;
+                }
+            }
         }
 
         .ant-list-item {
@@ -270,14 +282,22 @@ export default {
                 color: rgba(21, 23, 26, 0.8);
 
                 p {
+                    width: 100%;
                     overflow: hidden;
                     display: -webkit-box;
                     text-overflow: ellipsis;
                     -webkit-line-clamp: 3;
                     -webkit-box-orient: vertical;
+
+                    @media screen and (max-width: 1000px) {
+                        & {
+                            width: 90vw;
+                        }
+                    }
                 }
             }
-            .footer{
+
+            .footer {
                 display: flex;
                 justify-content: space-between;
             }

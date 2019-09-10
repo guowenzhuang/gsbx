@@ -16,6 +16,7 @@ export default {
   articleLabel: 'article',
   // 存放文章时的markdown内容标签名
   articleMarkdownLabel: 'article-md',
+  userInfoLabel: 'userinfo',
   // 菜单导航
   adminMenu: [
     {
@@ -27,6 +28,11 @@ export default {
           title: '工作台',
           key: 'workbench',
           icon: 'reconciliation'
+        },
+        {
+          title: '个人信息',
+          key: 'personal',
+          icon: 'user'
         }
       ]
     },
