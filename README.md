@@ -50,18 +50,18 @@ GSBX:前端采用vue+antd开发,无须服务器,部署到github pages 只要简�
 
 4. 修改项目配置
    
-   项目配置在 /gsbx/src/config/defaultSettings.js
+   项目配置在 /gsbx/src/config/defaultSettings.js 
    
    ```javascript
-   export default {
+   export default {  
      // github登录必须的clientId和clientSecret 如果本地运行不用动,
      // 如果需要部署到github pages需要分别替换clientId和clientSecret的前一个配置为第一步获取的clientId和client Secret
    
      clientId: NODEENV === 'production' ? 'd318e11d5b12bf0417b6' : 'd7b3acf20efed15aaf3e',
      clientSecret: NODEENV === 'production' ? '35d61b835b940179de4d8dc1d3b9541ed4cd55f9' : '3218bbf0edd44432d0b9605237c694d1662a74f0',
-     // 仓库所属用户名
+     // 仓库所属用户名(必填) 
      username: 'guowenzhuang',
-     // 存放数据仓库地址
+     // 存放数据仓库地址(必填) 
      articleRepo: 'gsbxComment',
      // 存放文章的标签名
      articleLabel: 'article',
@@ -110,20 +110,27 @@ GSBX:前端采用vue+antd开发,无须服务器,部署到github pages 只要简�
    2. 运行
    npm run serve 或者 yarn run serve
    ```
+   首页入口: http://localhost:9256/gsbx/
+                 
+   后台管理入口: http://localhost:9256/gsbx/admin
+  
 
 ## 🎈 发布到github pages <a name = 'fabu'></a>
+1. fork 此仓库
 
-1. 修改项目配置里的 clientId和clientSecret
+2. 拉取fork后的仓库
 
-2. 编译项目
+3. 修改项目配置里的 clientId和clientSecret
+
+4. 编译项目
    
    ```javascript
    npm run build 或者 yarn run build
    ```
    
-   3. 放入到github gh-pages分支下 
+5. 放入到fork后的仓库 gh-pages分支下 
    
-   4. 开启github pages
+6. 开启github pages
 
 ![NTuMfcojBD2XdGr](https://i.loli.net/2019/09/06/NTuMfcojBD2XdGr.png)
 

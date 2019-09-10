@@ -1,4 +1,4 @@
-const baseUrl = '/gsbx'
+const baseUrl = process.env.NODE_ENV === 'production' ? '/gsbx' : '/gsbx'
 
 module.exports = {
   publicPath: baseUrl,
