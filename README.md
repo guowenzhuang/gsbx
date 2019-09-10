@@ -138,7 +138,7 @@ GSBX:前端采用vue+antd开发,无须服务器,部署到github pages 只要简�
 
 ## 🚀 TODO <a name = "todo"></a>
 
-- 个人信息模块尚未编写
+
 
 ## ✍️ 作者 <a name = "author"></a>
 
