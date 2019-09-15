@@ -48,6 +48,14 @@ export default {
     .article-detail {
         padding: 3vh 6vh;
         text-align: left;
+        @media screen and (max-width: 1000px) {
+            & {
+                padding: 0;
+            }
+            .body{
+                padding-left: 0.8vw !important;
+            }
+        }
 
         .title {
             text-align: center;
@@ -67,7 +75,7 @@ export default {
         .body {
             width: 100%;
             overflow: hidden;
-            padding-left: 8.18vw;
+            margin: 0 auto;
         }
 
     }
