@@ -12,6 +12,7 @@ import '@/plugin/antd'
 import 'ant-design-vue/dist/antd.css'
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
+import '@/directives'
 
 Vue.use(VueIconFont)
 Vue.use(PluginAxios)

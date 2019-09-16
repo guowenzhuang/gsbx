@@ -9,9 +9,21 @@
                 <time class="time">日期: {{article.created_time}}</time>
             </div>
         </div>
-        <div class="body">
-            <div class="markdown-body" v-html="article.body"></div>
-        </div>
+        <a-row class="body">
+            <a-col :span="4" class="direct">
+                <ul>
+                    <li
+                            v-for="item in directorys"
+                            :key="item.a_id"
+                            :style="{marginLeft :((item.level-1)*12)+'px' }">
+
+                        <a :href="'#'+item.a_id">{{item.text}}</a>
+                    </li>
+                </ul>
+            </a-col>
+            <a-col :span="16" class="markdown-body" v-directory="{setDirectorys,directorys}"
+                   v-html="article.body"/>
+        </a-row>
     </div>
 </template>
 
@@ -26,13 +38,20 @@ export default {
     return {
       article: {
         user: {}
-      }
+      },
+      directorys: []
     }
   },
   computed: {
     ...mapState({
       userinfo: state => state.userinfo
     })
+  },
+  methods: {
+    setDirectorys (directorys) {
+      this.directorys = directorys
+      console.log(this.directorys)
+    }
   },
   created () {
     getIssueDetail(this.$route.query.articleId)
@@ -52,7 +71,7 @@ export default {
             & {
                 padding: 0;
             }
-            .body{
+            .body {
                 padding-left: 0.8vw !important;
             }
         }
@@ -76,6 +95,15 @@ export default {
             width: 100%;
             overflow: hidden;
             margin: 0 auto;
+            display: flex;
+            .direct{
+                position: fixed;
+                top: 15vh;
+                overflow: auto;
+            }
+            .markdown-body{
+                margin-left: 16.66666667%;
+            }
         }
 
     }
