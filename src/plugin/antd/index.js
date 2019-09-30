@@ -14,7 +14,8 @@ import {
   Select,
   Upload,
   Row,
-  Col
+  Col,
+  Drawer
 } from 'ant-design-vue'
 
 Vue.use(Button)
@@ -31,4 +32,5 @@ Vue.use(Select)
 Vue.use(Upload)
 Vue.use(Row)
 Vue.use(Col)
+Vue.use(Drawer)
 Vue.prototype.$message = message
